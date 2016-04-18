@@ -1,1 +1,1 @@
-
+For our project an idea we would like to start with is a text based rpg game. The game would have a story line and in each moment of the game you are given a menu with options to choose from. You character will be created through a class and will have things such as health, stamina, magic points, and so on. Random events during each turn have the potential to either help or hurt you. As you progress through the game your choices and luck effect the outcome of the game. Will you make it all the way to your goal?
