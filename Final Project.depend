@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1461126858 source:c:\users\dude\documents\final project\implementation.cpp
+	"header.h"
+
+1461187557 c:\users\dude\documents\final project\header.h
+	<iostream>
+	<cstdlib>
+	<string>
+
+1461126418 source:c:\users\dude\documents\final project\main.cpp
+	"header.h"
+
