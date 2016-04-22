@@ -1,9 +1,29 @@
-#include <iostream>
 
-using namespace std;
+#include"header.h"
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+int choice=0;
+displaymainmenu();
+cin>>choice;
+
+if(choice!=5)
+{
+
+   if(choice==1)
+   {
+    introscene();
+    createcharacter();
+   }
+
+
+
+
+
+
+
+
+}
+
+return 0;
 }
