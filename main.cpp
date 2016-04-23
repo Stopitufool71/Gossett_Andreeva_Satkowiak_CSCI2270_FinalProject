@@ -16,7 +16,19 @@ if(choice!=5)
     createcharacter();
    }
 
+    if(choice==2)
+    {
+    cout<<"High Scores"<<endl;
+    }
 
+    if(choice==3)
+    {
+    cout<<"Options"<<endl;
+    }
+    if(choice==4)
+    {
+    cout<<"View Credits"<<endl;
+    }
 
 
 
@@ -24,6 +36,22 @@ if(choice!=5)
 
 
 }
+else
+{
+    cout<<"Good Bye!"<<endl;
+}
+
+
+citynode * root= new citynode;
+root->name="Boulder";
+root->weather="Windy";
+root->parent=NULL;
+root->left=NULL;
+root->right=NULL;
+
+
+
+
 
 return 0;
 }
