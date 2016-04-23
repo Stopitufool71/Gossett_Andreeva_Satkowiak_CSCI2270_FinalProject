@@ -1,5 +1,10 @@
 #include"header.h"
+using namespace std;
 
+void clearscreen()
+{
+cout<< string(50, '\n');
+}
 
 void displaymainmenu()
 {
@@ -18,8 +23,8 @@ cout << "                              =   =    = =  =  =     " << endl;
 cout << "                              =   =    ===  =  ====  " << endl;
 cout <<endl;
 cout << "================================================================================"<<endl;
-cout<<"                          ";
-system("PAUSE");
+cout<<"                            Press Enter To Continue                          ";
+cin.get();
 cout<<endl;
 cout<<endl;
 cout<<endl;
@@ -37,7 +42,7 @@ cout<<endl;
 cout<<endl;
 cout<<endl;
 cout<<"                               1. New Game"<<endl;
-cout<<"                               2. Load Game"<<endl;
+cout<<"                               2. High-Scores"<<endl;
 cout<<"                               3. Options"<<endl;
 cout<<"                               4. View Credits"<<endl;
 cout<<"                               5. Exit"<<endl;
@@ -55,64 +60,18 @@ cout<<"                               Your Choice:";
 
 void introscene()
 {
+string line;
 cout<<"Background: It is the end of the Spring Semester and you have just graduated"<<endl;
 cout<<"from CU, You miraculously still have $50,000 saved up that you want to spend on"<<endl;
-cout<<"getting a graduate degree from Harvard. You have 90 days to travel from Boulder"<<endl;
+cout<<"getting a graduate degree from Harvard. You have 48 hours to travel from Boulder"<<endl;
 cout<<"to Cambridge, Massachusetts without running out of money,"<<endl;
 cout<<"becoming stranded, or even dying. Good Luck!"<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-system("PAUSE");
 }
 
-void createcharacter()
 {
+void createcharacter()
 bool loop = true;
 int majorchoice=0;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
 
     while(loop==true)
     {
