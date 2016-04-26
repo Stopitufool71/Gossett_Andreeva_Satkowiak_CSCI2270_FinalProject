@@ -1,10 +1,102 @@
 #include"header.h"
 using namespace std;
 
+
+void character::stats()
+{
+    string thestate;
+        for(int i = 0; i < vertices.size(); i++){
+        if(vertices[i].name == currentlocation)
+        {
+            thestate=vertices[i].state;
+        }
+        }
+cout<< "Current Location: " << currentlocation<<", "<< thestate<<endl;
+cout<< "Day: "<<day<<endl;
+
+cout<< "Health: "<< health<<endl;
+cout<< "Gas: " << gas<< " gallons" << endl;
+cout<< "Money: " << money << " dollars" <<endl;
+}
+ void character::playgame()
+ {
+     displayEdges();
+     while(currentlocation!="NewHaven")
+     {
+    int choice=0;
+    int ca=0;
+    if(vertices[i].adj.size()==1&&vertices[i].adj[0].visited==false) //case 1
+    {
+        stats();
+        cout<<"case 1"<<endl;
+        ca=1;
+        cout<<"1. Travel to: "<<vertices[i].adj[0].v->name<<", "<< vertices[i].adj[0].v->state <<" via "<< vertices[i].adj[0].road<<endl;
+        cout<<"2. Rest"<<endl;
+        cout<<"3. Shop"<<endl;
+    }
+
+    if(vertices[i].adj.size()==3&&vertices[i].adj[0].visited==true) //case 2
+    {
+        stats();
+        cout<<"case 2"<<endl;
+        ca=2;
+        cout<<"1. Travel to: "<<vertices[i].adj[1].v->name<<", "<< vertices[i].adj[1].v->state <<" via "<< vertices[i].adj[1].road<<endl;
+        cout<<"2. Travel to: "<<vertices[i].adj[2].v->name<<", "<< vertices[i].adj[2].v->state <<" via "<< vertices[i].adj[2].road<<endl;
+        cout<<"3. Rest"<<endl;
+        cout<<"4. Shop"<<endl;
+    }
+
+    if(vertices[i].adj.size()==2&&vertices[i].adj[0].visited==true) //case 3
+    {
+        stats();
+        cout<<"Case3"<<endl;
+        ca=3;
+        cout<<"1. Travel to: "<<vertices[i].adj[1].v->name<<", "<< vertices[i].adj[1].v->state <<" via "<< vertices[i].adj[1].road<<endl;
+        cout<<"3. Rest"<<endl;
+        cout<<"4. Shop"<<endl;
+    }
+
+    cin>>choice;
+
+    if(ca==1&&choice==1)
+    {
+        currentlocation=vertices[i].adj[0].v->name;
+        vertices[i].adj[0].visited=true;
+        i++;
+    }
+
+    if(ca==2&&choice==1)
+    {
+        currentlocation=vertices[i].adj[1].v->name;
+        vertices[i].adj[1].visited=true;
+        i++;
+    }
+
+    if(ca==2&&choice==2)
+    {
+        currentlocation=vertices[i].adj[2].v->name;
+        vertices[i].adj[2].visited=true;
+        i++;
+    }
+
+    if(ca==3&&choice==1)
+    {
+        currentlocation=vertices[i].adj[1].v->name;
+        vertices[i].adj[1].visited=true;
+        i++;
+    }
+
+
+     }
+
+ }
+
+
 void character::clearscreen()
 {
 cout<< string(50, '\n');
 }
+
 
 void character::displaymainmenu()
 {
@@ -15,12 +107,17 @@ cout << "           =    =__          =  =  ====  =  =  =       =               
 cout << "           =    = =   ==     ===   =  =  =  =  =     ===  ==    ===          "    << endl;
 cout << "           =    = =   = ==   =  =  =  =  =  =  =     = =  = ==  =             " << endl;
 cout << "           =    = =    ==    ===   ====  ====  ====  ===   ==   =            " << endl;
-cout << "     " << endl;
-cout << "                            =====           =  =     " << endl;
-cout << "                              =          =     =     " << endl;
-cout << "                              =   ===  ===  =  =     " << endl;
-cout << "                              =   =    = =  =  =     " << endl;
-cout << "                              =   =    ===  =  ====  " << endl;
+cout <<  endl;
+cout<<"         =====         =    =    =  =                                       "<<endl;
+cout<<"           =   ===       = =   ===  =    ===                             "<<endl;
+cout<<"           =   = =        =    = =  =    ==                         "<<endl;
+cout<<"           =   ===        =    ===  ===  ===                        "<<endl;
+cout<<"                                                                "<<endl;
+cout << "        =====           =  =     " << endl;
+cout << "          =          =     =     " << endl;
+cout << "          =   ===  ===  =  =     " << endl;
+cout << "          =   =    = =  =  =     " << endl;
+cout << "          =   =    ===  =  ====  " << endl;
 cout <<endl;
 cout << "================================================================================"<<endl;
 cout<<"                            Press Enter To Continue                          ";
@@ -56,16 +153,68 @@ cout<<endl;
 cout<<endl;
 cout<<endl;
 cout<<"                               Your Choice:";
+
+int choice=0;
+cin>>choice;
+if(choice!=5)
+{
+
+   if(choice==1)
+   {
+    startgame=true;
+   }
+
+    if(choice==2)
+    {
+    cout<<"High Scores"<<endl;
+    }
+
+    if(choice==3)
+    {
+    cout<<"Options"<<endl;
+    }
+    if(choice==4)
+    {
+        string line;
+        cout<<endl;
+    cout<<"_________________________________CREATED BY_________________________________"<<endl;
+    cout<<"_______________________________NAA-way Studios______________________________"<<endl;
+    cout<< "________________________________Adam Gossett_______________________________" <<endl;
+    cout<<"______________________________Austin Satkowiak______________________________"<<endl;
+    cout<<"______________________________Natalia Andreeva______________________________"<<endl;
+    cout<<"____________________________________________________________________________"<<endl;
+    cout<<"______________________________Rhonda Hoenigman______________________________"<<endl;
+    cout<<"_________________________________CSCI-2270__________________________________"<<endl;
+    cout<<"_________________________________4/27/2016__________________________________"<<endl;
+    cout<<endl;
+    cout<<"__________________________Press Return To Continue__________________________"<<endl;
+    cin.ignore();
+    cin.get();
+    displaymainmenu();
+}
+if (choice==5)
+{
+    cout<<"Goodbye!"<<endl;
+    exit(1);
+}
+if (choice>5||choice<0)
+{
+    cout<<"Choice not Avaliable"<<endl;
+    displaymainmenu();
+}
+}
 }
 
 void character::introscene()
 {
-string line;
 cout<<"Background: It is the end of the Spring Semester and you have just graduated"<<endl;
 cout<<"from CU, You miraculously still have $50,000 saved up that you want to spend on"<<endl;
 cout<<"getting a graduate degree from Yale. You have 48 hours to travel from Boulder";
 cout<<"to New Haven, Conneticut without running out of money,"<<endl;
 cout<<"becoming stranded, or even dying. Good Luck!"<<endl;
+cout<<"Press Enter to Continue"<<endl;
+cin.ignore();
+cin.get();
 }
 
 void character::createcharacter()
@@ -91,7 +240,7 @@ int majorchoice=0;
     cout<<"Luck: 3"<<endl;
     cout<<"Intelligence: 10"<<endl;
     cout<<"Strength: 2"<<endl;
-    character(100,7,3,10,2,50000,true, false, false);
+    type="Engineer";
     }
         if(majorchoice==2)
     {
@@ -102,7 +251,7 @@ int majorchoice=0;
     cout<<"Luck: 5"<<endl;
     cout<<"Intelligence: 8"<<endl;
     cout<<"Strength: 5"<<endl;
-    character(120,5,5,8,5,50000, false, true, false);
+    type="Med";
     }
         if(majorchoice==3)
     {
@@ -113,7 +262,7 @@ int majorchoice=0;
     cout<<"Luck: 9"<<endl;
     cout<<"Intelligence: 4"<<endl;
     cout<<"Strength: 8"<<endl;
-    character(100,3,9,4,8,50000, false, false, true);
+    type="Business";
     }
         if(majorchoice==4)
     {
@@ -121,6 +270,9 @@ int majorchoice=0;
     cout<<"Engineering: You start with very high intelligence, high stamina, low strength, and medium luck. You also have perks to fix things."<<endl;
     cout<<"Medical: You start with extra health, high intelligence, medium stamina,\nmedium strength, and medium luck. You also have perks to heal yourself and others."<<endl;
     cout<<"Business: You start with medium intelligence, low stamina, high strength \nand high luck. You have perks to make money on the road."<<endl;
+    cout<<"Press Enter to Continue"<<endl;
+    cin.ignore();
+    cin.get();
 
     }
         if(majorchoice>4 || majorchoice<0)
@@ -136,29 +288,21 @@ character::character()
 
 }
 
-character::character(int health, int stamina, int luck, int intelligence, int strength, int money, bool engineeringperk, bool medicalperk, bool businessperk)
+character::setcharacter(int hp, int st, int lu, int inte, int str, int mon)
 {
-health=health;
-stamina=stamina;
-luck=luck;
-intelligence=intelligence;
-strength=strength;
-money=money;
-engineeringperk=engineeringperk;
-businessperk=businessperk;
-medicalperk=medicalperk;
+health=hp;
+stamina=st;
+luck=lu;
+intelligence=inte;
+strength=str;
+money=mon;
+gas=30;
+day=1;
+currentlocation="Boulder";
+i=0;
 }
 
-Graph::Graph()
-{
-
-}
-
-Graph::~Graph()
-{
-    //dtor
-}
-void Graph::addEdge(string v1, string v2, int weight, string road){
+void character:: addEdge(string v1, string v2, int weight, string road){
 
     for(int i = 0; i < vertices.size(); i++){
         if(vertices[i].name == v1){
@@ -168,6 +312,7 @@ void Graph::addEdge(string v1, string v2, int weight, string road){
                     av.v = &vertices[j];
                     av.weight = weight;
                     av.road=road;
+                    av.visited=false;
                     vertices[i].adj.push_back(av);
                     //another vertex for edge in other direction
                     adjVertex av2;
@@ -179,7 +324,7 @@ void Graph::addEdge(string v1, string v2, int weight, string road){
         }
     }
 }
-void Graph::addVertex(string n,string s){
+void character::addVertex(string n,string s){
     bool found = false;
     for(int i = 0; i < vertices.size(); i++){
         if(vertices[i].name == n){
@@ -196,7 +341,7 @@ void Graph::addVertex(string n,string s){
     }
 }
 
-void Graph::displayEdges(){
+void character::displayEdges(){
     //loop through all vertices and adjacent vertices
     for(int i = 0; i < vertices.size(); i++){
         cout<<vertices[i].name<<"-->";
@@ -207,3 +352,5 @@ void Graph::displayEdges(){
     }
 
 }
+
+

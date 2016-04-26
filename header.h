@@ -9,12 +9,26 @@ using namespace std;
 
 
 
+class character
+{
+public:
+bool startgame=false;
+string type="";
+character();
+setcharacter(int hp, int st, int lu ,int inte, int str, int mon);
+void stats();
+void displaymainmenu();
+void introscene();
+void createcharacter();
+void clearscreen();
+void choosepace();
 struct vertex;
 
 struct adjVertex{
     vertex *v;
     int weight;
     string road;
+    bool visited;
 };
 
 struct vertex{
@@ -23,43 +37,24 @@ struct vertex{
     std::vector<adjVertex> adj;
 };
 
-class Graph
-{
-    public:
-        Graph();
-        ~Graph();
         void addEdge(std::string v1, std::string v2, int weight, string road);
         void addVertex(std::string name, std::string state);
         void displayEdges();
-    protected:
-    private:
-        //vector<edge> edges;
+        void playgame();
         std::vector<vertex> vertices;
-
-};
-
-class character
-{
-public:
-character();
-character(int health, int stamina, int luck, int intelligence, int strength, int money, bool, bool, bool);
-void displaymainmenu();
-void introscene();
-void createcharacter();
-void clearscreen();
 
 
 private:
+string currentlocation;
 int health;
 int stamina;
 int luck;
 int intelligence;
 int strength;
 int money;
-bool engineeringperk;
-bool medicalperk;
-bool businessperk;
-
+int gas;
+int day;
+int i;
 };
 
 
