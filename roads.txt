@@ -1,5 +1,5 @@
 Boulder,Denver,28,US Highway 36
-Denver,Lochvuie,21,Interstate 76
+Denver,Lochbuie,21,Interstate 76
 Lochbuie,Fort Morgan,57,Interstate 76
 Fort Morgan,Sterling,444,Interstate 80
 Sterling,Ogallala,315,Interstate 80

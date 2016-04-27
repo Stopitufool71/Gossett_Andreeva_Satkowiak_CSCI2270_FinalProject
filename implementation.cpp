@@ -557,5 +557,37 @@ void character::loadVertexFile(string fname)
 
 void character::loadEdgeFile(string fname)
 {
+    fstream infile;
+    infile.open(fname);
+    if (!infile.good())
+    {
+        cout << "Could not open edge file." << endl;
+        return;
+    }
 
+    string city, state, weight, route;
+    int numweight;
+    string line;
+
+    while (getline(infile, line))
+    {
+        int c1, c2, c3;
+        c1 = line.find(',');
+        c2 = line.find(',', c1+1);
+        c3 = line.find(',', c2+1);
+        city = line.substr(0, c1);
+        state = line.substr(c1+1, c2 - c1 - 1);
+        weight = line.substr(c2+1, c3 - c2 - 1);
+        route = line.substr(c3+1);
+
+        stringstream converter (weight);
+        if (!(converter >> numweight))
+        {
+            numweight = 0;
+        }
+
+        addEdge(city, state, numweight, route);
+    }
+
+    infile.close();
 }
