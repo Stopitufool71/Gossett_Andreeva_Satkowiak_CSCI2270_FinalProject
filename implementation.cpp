@@ -242,12 +242,16 @@ int casee=0;
         }
         if(health<0)
         {
-            cout<<"Your didn't eat and now your dead!"<<endl;
+            cout<<"You didn't eat and now you're dead!"<<endl;
+                cout<<"Your score: "<<(money/day)<<endl;
             break;
         }
         }
+        if(currentlocation=="New Haven")
+        {
     cout<<"Congratulations You made it to Yale!"<<endl;
-    cout<<"Your score: "<<(money/day)<<endl;
+        }
+
  }
 
 
