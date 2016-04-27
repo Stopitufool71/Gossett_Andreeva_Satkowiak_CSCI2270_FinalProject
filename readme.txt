@@ -1,1 +1,35 @@
-For our project an idea we would like to start with is a text based rpg game. The game would have a story line and in each moment of the game you are given a menu with options to choose from. You character will be created through a class and will have things such as health, stamina, magic points, and so on. Random events during each turn have the potential to either help or hurt you. As you progress through the game your choices and luck effect the outcome of the game. Will you make it all the way to your goal?
+The Boulder to Yale Trail
+Group members:
+Adam Gossett
+Austin Satkowiak
+Natalia Andreeva
+
+Summary:
+The Boulder to Yale Trail is a text based rpg game that utilizes a graph class to travel
+the highways of America to get from CU Boulder to Yale. The character has several stats
+that help them on the way. The Graph is weighted and when you travel over a road, gas is
+deducted from your tank as you drive more and more miles. The graph class also includes the use
+of road names and state names. How soon you get to your destination and the how much money
+you used determines your final score. In order to use the program simply follow along with
+the given prompts. 
+
+Depedencies:
+A 32 or 64 bit operating system
+standard libraries such as: iostream, cstdlib, string, and vector
+a compiler like mingw
+a linker
+thats about it, no specific system requirements!
+
+No additional contributors
+
+open issues: Sometimes the menu generates big chunks of white space when you try to input
+the wrong input randomly and repeatedly.
+
+
+
+
+
+
+
+
+

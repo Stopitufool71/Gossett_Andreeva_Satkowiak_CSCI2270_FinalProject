@@ -1,3 +1,19 @@
+// The Boulder Trail
+//Adam Gossett
+//Austin Satkowiak
+//Natalia Andreeva
+//CSCI-2270 Rhonda Hoenigman
+//Final Project
+//4/27/2016
+
+
+
+
+
+
+
+
+
 #ifndef Header
 #define Header
 
@@ -5,6 +21,8 @@
 #include<cstdlib>
 #include<string>
 #include<vector>
+#include<fstream>
+#include<sstream>
 using namespace std;
 
 
@@ -23,6 +41,9 @@ void introscene();
 void createcharacter();
 void clearscreen();
 void choosepace();
+void showhighscore();
+void rest();
+
 struct vertex;
 
 struct adjVertex{
@@ -42,7 +63,7 @@ struct vertex{
         void addVertex(std::string name, std::string state);
         void displayEdges();
         void playgame();
-        std::vector<vertex> vertices;
+        vector<vertex> vertices;
 
 
 private:

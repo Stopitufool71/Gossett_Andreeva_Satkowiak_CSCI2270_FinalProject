@@ -1,8 +1,86 @@
+// The Boulder Trail
+//Adam Gossett
+//Austin Satkowiak
+//Natalia Andreeva
+//CSCI-2270 Rhonda Hoenigman
+//Final Project
+//4/27/2016
+
+
+
+
+
+
 #include"header.h"
 using namespace std;
 
+
+void character::rest()
+{
+    int choice=0;
+clearscreen();
+cout<<"1 day of rest = 20 hp (max hp = 120)"<<endl;
+cout<<"Rest for how many days?"<<endl;
+cin>>choice;
+if(choice<0)
+{
+   cout<< "Cannot rest for negative days"<<endl;
+   rest();
+}
+else
+{
+    day=day+choice;
+    if((120-health)<(choice*20))
+    {
+        health=120;
+    }
+    else
+    {
+        health=health+(choice*20);
+    }
+}
+}
+
+void character::showhighscore()
+{
+    string line;
+    string word;
+    string thename;
+    int thescore;
+    int count=0;
+    ifstream instream;
+    instream.open("highscores.txt");
+    if(instream.fail())
+    {
+        cout<<"Error opening file" << endl;
+        exit(1);
+    }
+    while(getline(instream,line))
+    {
+    stringstream iss(line);
+    count=0;
+    while(getline(iss, word, ',' ))
+            if(count==0)
+            {
+                thename=word;
+            }
+            else if(count==1)
+            {
+                thescore=(atoi(word.c_str()));
+            }
+            cout<<thename<<" "<<thescore<<endl;
+            count++;
+    }
+    cout<<"Press Enter to Continue"<<endl;
+    cin.ignore();
+    cin.get();
+    clearscreen();
+    displaymainmenu();
+
+}
 void character::shop()
 {
+    clearscreen();
     int choice=0;
     int choice2=0;
     string choice3="";
@@ -40,7 +118,7 @@ void character::shop()
     if(choice==2)
     {
         cout<<"3$ per gallon"<<endl;
-        cout<<"Fill up?"<<endl;
+        cout<<"Fill up? y/n"<<endl;
         cin>>choice3;
         if(choice3=="Y"||choice3=="y")
         {
@@ -85,7 +163,6 @@ cout<< "Money: " << money << " dollars" <<endl;
 }
  void character::playgame()
  {
-    stats();
 int i=0;
 int j=0;
 int choice=0;
@@ -94,12 +171,12 @@ int casee=0;
         while(currentlocation!="New Haven")
         {
         for(i=0;i<vertices.size();i++)
-    {
+        {
         if(vertices[i].name==currentlocation)
         {
             j=i;
         }
-    }
+        }
         if(vertices[j].adj.size()==1&&vertices[j].adj[0].visited==false)
         {
         casee=1;
@@ -120,26 +197,65 @@ int casee=0;
         cin>>choice;
         if(casee==1&&choice==1)
         {
+            if(gas>((vertices[j].adj[0].weight)/26))
+            {
             currentlocation=vertices[j].adj[0].v->name;
             vertices[j].adj[0].visited=true;
             day++;
+            gas=(gas-((vertices[j].adj[0].weight)/26));
+            food=food-3;
+            }
+            else if(gas<((vertices[j].adj[0].weight)/26))
+            {
+                cout<<"Not Enough Gas"<<endl;
+            }
         }
-        if(casee=1&&choice==3)
+        if(choice==2)
+        {
+            rest();
+        }
+        if(choice==3)
         {
             shop();
         }
         if(casee==2&&choice==1)
         {
+            if(gas>((vertices[j].adj[1].weight)/26))
+            {
             currentlocation=vertices[j].adj[1].v->name;
             vertices[j].adj[1].visited=true;
             day++;
+            gas=(gas-((vertices[j].adj[1].weight)/26));
+            food=food-3;
+            }
+            else if(gas<((vertices[j].adj[1].weight)/26))
+            {
+                cout<<"Not Enough Gas"<<endl;
+            }
         }
-        if(casee==2&&choice==3)
+        if(food==-1)
         {
-            shop();
+            health=health-15;
+            food=0;
+        }
+        if(food==-2)
+        {
+            health=health-30;
+            food=0;
+        }
+        if(food==-3)
+        {
+            health=health-45;
+            food=0;
+        }
+        if(health<0)
+        {
+            cout<<"Your didn't eat and now your dead!"<<endl;
+            break;
         }
         }
-
+    cout<<"Congratulations You made it to Yale!"<<endl;
+    cout<<"Your score: "<<(money/day)<<endl;
  }
 
 
@@ -154,22 +270,22 @@ void character::displaymainmenu()
 cout << "================================================================================"<<endl;
 cout <<                                                                                     endl;
 cout << "         =====  =            ===               =       =                     "<<endl;
-cout << "           =    =__          =  =  ====  =  =  =       =                      " << endl;
-cout << "           =    = =   ==     ===   =  =  =  =  =     ===  ===  ===          "    << endl;
-cout << "           =    = =   = ==   =  =  =  =  =  =  =     = =  ==   =             " << endl;
-cout << "           =    = =    ==    ===   ====  ====  ====  ===  ===  =            " << endl;
+cout << "           =    =            =  =  ====  =  =  =       =                      " << endl;
+cout << "           =    = =   ===    ===   =  =  =  =  =     ===  ===  ===          "    << endl;
+cout << "           =    = =   ==     =  =  =  =  =  =  =     = =  ==   =             " << endl;
+cout << "           =    = =   ===    ===   ====  ====  ====  ===  ===  =            " << endl;
 cout <<  endl;
-cout<<"           =====         =    =    =  =                                       "<<endl;
-cout<<"             =   ===       = =   ===  =    ===                             "<<endl;
-cout<<"             =   = =        =    = =  =    ==                         "<<endl;
-cout<<"             =   ===        =    ===  ===  ===                        "<<endl;
+cout<<"         =====         =    =       =                                       "<<endl;
+cout<<"           =   ===       = =   ===  =    ===                             "<<endl;
+cout<<"           =   = =        =    ===  =    ==                         "<<endl;
+cout<<"           =   ===        =    = =  ===  ===                        "<<endl;
 cout<<"                                                                "<<endl;
-cout << "        =====           =  =     " << endl;
-cout << "          =          =     =     " << endl;
-cout << "          =   ===  ===  =  =     " << endl;
-cout << "          =   =    = =  =  =     " << endl;
-cout << "          =   =    ===  =  ====  " << endl;
-cout <<endl;
+cout << "         =====           =  =             " << endl;
+cout << "           =                =      " << endl;
+cout << "           =   ===  ===  =  =              By:" << endl;
+cout << "           =   =    ===  =  =              Adam Gossett" << endl;
+cout << "           =   =    = =  =  ====           Austin Satkowiak" << endl;
+cout <<"                                           Natalia Andreeva  "<<endl;
 cout << "================================================================================"<<endl;
 cout<<"                            Press Enter To Continue                          ";
 cin.get();
@@ -203,6 +319,7 @@ cout<<endl;
 cout<<endl;
 cout<<endl;
 cout<<endl;
+cout<<endl;
 cout<<"                               Your Choice:";
 
 int choice=0;
@@ -215,7 +332,7 @@ cin>>choice;
 
     if(choice==2)
     {
-    cout<<"High Scores"<<endl;
+    showhighscore();
     }
 
     if(choice==3)
@@ -254,6 +371,7 @@ if (choice>4||choice<0)
     displaymainmenu();
 }
 
+
 }
 
 void character::introscene()
@@ -272,19 +390,20 @@ cout<<"Good Luck!"<<endl;
 cout<<"Press Enter to Continue"<<endl;
 cin.ignore();
 cin.get();
+clearscreen();
 }
 
 void character::createcharacter()
 {
 bool loop = true;
 int majorchoice=0;
-string yourname="";
+char yourname[256]="";
 
     cout<<"Create Your Character!"<<endl;
     cout<<"Your name?"<<endl;
-    cin>>yourname;
+    cin.getline(yourname,256);
     name=yourname;
-    cout<<"Hi "<< name<<endl;
+    cout<<"Hi "<< name<<endl<<endl;
 
     while(loop==true)
     {
@@ -331,12 +450,11 @@ string yourname="";
         if(majorchoice==4)
     {
     loop=true;
+    clearscreen();
     cout<<"Engineering: You start with very high intelligence, high stamina, low strength, and medium luck. You also have perks to fix things."<<endl;
     cout<<"Medical: You start with extra health, high intelligence, medium stamina,\nmedium strength, and medium luck. You also have perks to heal yourself and others."<<endl;
     cout<<"Business: You start with medium intelligence, low stamina, high strength \nand high luck. You have perks to make money on the road."<<endl;
-    cout<<"Press Enter to Continue"<<endl;
-    cin.ignore();
-    cin.get();
+
 
     }
         if(majorchoice>4 || majorchoice<0)
@@ -345,6 +463,9 @@ string yourname="";
         cout<<"Invalid Input"<<endl;
         }
     }
+    cout<<"Press Enter to Continue"<<endl;
+    cin.ignore();
+    cin.get();
     clearscreen();
 }
 
@@ -363,6 +484,7 @@ strength=str;
 money=mon;
 gas=30;
 day=1;
+food=10;
 currentlocation="Boulder";
 }
 

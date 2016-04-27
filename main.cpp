@@ -1,3 +1,15 @@
+// The Boulder Trail
+//Adam Gossett
+//Austin Satkowiak
+//Natalia Andreeva
+//CSCI-2270 Rhonda Hoenigman
+//Final Project
+//4/27/2016
+
+
+
+
+
 
 #include"header.h"
 
@@ -71,7 +83,6 @@ if(player.startgame=true)
     {
         player.setcharacter(100,3,9,4,8,50000);
     }
-    player.displayEdges();
     player.playgame();
 }
 
