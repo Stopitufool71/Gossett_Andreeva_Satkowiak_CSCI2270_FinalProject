@@ -33,7 +33,7 @@ public:
 bool startgame=false;
 string type="";
 character();
-setcharacter(int hp, int st, int lu ,int inte, int str, int mon);
+void setcharacter(int hp, int st, int lu ,int inte, int str, int mon);
 void stats();
 void shop();
 void displaymainmenu();
@@ -60,13 +60,16 @@ struct vertex{
 };
 
         void addEdge(std::string v1, std::string v2, int weight, string road);
-        void addVertex(std::string name, std::string state);
+        void addVertex(string name, std::string state);
+        void loadEdgeFile(string fname);
+        void loadVertexFile(string fname);
         void displayEdges();
         void playgame();
         vector<vertex> vertices;
 
 
 private:
+
 string currentlocation;
 string name;
 int health;

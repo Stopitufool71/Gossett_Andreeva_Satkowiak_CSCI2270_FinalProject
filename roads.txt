@@ -1,0 +1,19 @@
+Boulder,Denver,28,US Highway 36
+Denver,Lochbuie,21,Interstate 76
+Lochbuie,Fort Morgan,57,Interstate 76
+Fort Morgan,Sterling,444,Interstate 80
+Sterling,Ogallala,315,Interstate 80
+Ogallala,Lexington,113,Interstate 80
+Lexington,Lincoln,169,Interstate 80
+Lincoln,Omaha,52,Interstate 80
+Omaha,Des Moines,138,Interstate 80
+Des Moines,Iowa City,114,Interstate 80
+Iowa City,Davenport,59,Interstate 80
+Davenport,Joliet,145,Interstate 80
+Joliet,South Bend,101,Interstate 90
+South Bend,Toledo,157,Interstate 80
+Toledo,Cleveland,118,Interstate 90
+Cleveland,Pittsburg,134,Interstate 76-E
+Pittsburg,Harrisburg,203,Interstate 76-E
+Harrisburg,New York,170,Interstate 78-E
+New York,New Haven,81,Interstate 95
