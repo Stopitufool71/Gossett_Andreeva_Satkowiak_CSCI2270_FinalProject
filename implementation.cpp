@@ -535,4 +535,27 @@ void character::displayEdges(){
 
 }
 
+void character::loadVertexFile(string fname)
+{
+    fstream infile;
+    infile.open(fname);
+    if (!infile.good())
+    {
+        cout << "Could not open edge file." << endl;
+        return;
+    }
 
+    string line; string city; string state;
+    while (getline(infile, line))
+    {
+        city = line.substr(0, line.find(','));
+        state = line.substr(line.find(',') + 1);
+        addVertex(city, state);
+    }
+    infile.close();
+}
+
+void character::loadEdgeFile(string fname)
+{
+
+}

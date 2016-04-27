@@ -17,30 +17,7 @@ int main()
 {
 character player;
 
-
-
-player.addVertex("Boulder","Colorado");
-player.addVertex("Denver", "Colorado");
-player.addVertex("Lochbuie", "Colorado");
-player.addVertex("Fort Morgan", "Colorado");
-player.addVertex("Sterling", "Colorado");
-player.addVertex("Ogallala", "Nebraska");
-player.addVertex("Lexington", "Nebraska");
-player.addVertex("Lincoln", "Nebraska");
-player.addVertex("Omaha", "Nebraska");
-player.addVertex("Des Moines", "Iowa");
-player.addVertex("Iowa City", "Iowa");
-player.addVertex("Davenport", "Iowa");
-player.addVertex("Joliet", "Illinois");
-player.addVertex("South Bend", "Illinois");
-player.addVertex("Toledo", "Ohio");
-player.addVertex("Cleveland", "Ohio");
-player.addVertex("Pittsburg", "Pennsylvania");
-player.addVertex("Harrisburg", "Pennsylvania");
-player.addVertex("New York", "New York");
-player.addVertex("New Haven", "Connecticut");
-
-
+player.loadVertexFile("cities.txt");
 
 player.addEdge("Boulder","Denver",28,"US Highway 36");
 player.addEdge("Denver","Lochbuie",21,"Interstate 76");
