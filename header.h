@@ -54,7 +54,6 @@ int strength;
 int money;
 int gas;
 int day;
-int i;
 };
 
 
