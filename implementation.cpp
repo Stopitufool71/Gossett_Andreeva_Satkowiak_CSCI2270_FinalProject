@@ -470,7 +470,7 @@ character::character()
 
 }
 
-character::setcharacter(int hp, int st, int lu, int inte, int str, int mon)
+void character::setcharacter(int hp, int st, int lu, int inte, int str, int mon)
 {
 health=hp;
 stamina=st;

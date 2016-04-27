@@ -33,7 +33,7 @@ public:
 bool startgame=false;
 string type="";
 character();
-setcharacter(int hp, int st, int lu ,int inte, int str, int mon);
+void setcharacter(int hp, int st, int lu ,int inte, int str, int mon);
 void stats();
 void shop();
 void displaymainmenu();
