@@ -17,7 +17,7 @@ string type="";
 character();
 setcharacter(int hp, int st, int lu ,int inte, int str, int mon);
 void stats();
-void addyork();
+void shop();
 void displaymainmenu();
 void introscene();
 void createcharacter();
@@ -47,7 +47,9 @@ struct vertex{
 
 private:
 string currentlocation;
+string name;
 int health;
+int food;
 int stamina;
 int luck;
 int intelligence;

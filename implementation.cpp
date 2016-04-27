@@ -1,6 +1,70 @@
 #include"header.h"
 using namespace std;
 
+void character::shop()
+{
+    int choice=0;
+    int choice2=0;
+    string choice3="";
+
+    cout<<"Welcome to the Corner Store!"<<endl;
+    cout<<"1. Buy Food"<<endl;
+    cout<<"2. Buy Gas"<<endl;
+    cin>>choice;
+    if(choice==1)
+    {
+        cout<<"5$ per ration"<<endl;
+        cout<<"How much food?"<<endl;
+        cin>>choice2;
+        cout<<"Price: "<<5*choice2<<endl;
+        cout<<"Buy? y/n"<<endl;
+        cin>>choice3;
+        if(choice3=="Y"||choice3=="y")
+        {
+        if(money>choice2*5)
+        {
+        food=choice2+food;
+        money=money-(choice2*5);
+        }
+        else
+        {
+        cout<<"Not enough money :-("<<endl;
+        }
+        }
+        else
+        {
+            cout<<"Goodbye!"<<endl;
+        }
+
+    }
+    if(choice==2)
+    {
+        cout<<"3$ per gallon"<<endl;
+        cout<<"Fill up?"<<endl;
+        cin>>choice3;
+        if(choice3=="Y"||choice3=="y")
+        {
+        cout<<"Price: "<<((30-gas)*3)<<endl;
+        cout<<"Buy? y/n"<<endl;
+
+        cin>>choice3;
+        if(choice3=="Y"||choice3=="y")
+        {
+            money=money-((30-gas)*3);
+            gas=30;
+        }
+        else
+        {
+            cout<<"Goodbye!"<<endl;
+        }
+        }
+        else
+        {
+            cout<<"Goodbye!"<<endl;
+        }
+    }
+}
+
 
 void character::stats()
 {
@@ -15,6 +79,7 @@ cout<< "Current Location: " << currentlocation<<", "<< thestate<<endl;
 cout<< "Day: "<<day<<endl;
 
 cout<< "Health: "<< health<<endl;
+cout<< "Food: "<< food<<endl;
 cout<< "Gas: " << gas<< " gallons" << endl;
 cout<< "Money: " << money << " dollars" <<endl;
 }
@@ -33,12 +98,12 @@ int casee=0;
         if(vertices[i].name==currentlocation)
         {
             j=i;
-            cout<<"J/I"<<i<<endl;
         }
     }
         if(vertices[j].adj.size()==1&&vertices[j].adj[0].visited==false)
         {
         casee=1;
+        stats();
         cout<<"1. Travel to: "<<vertices[j].adj[0].v->name<<", "<< vertices[j].adj[0].v->state <<" via "<< vertices[j].adj[0].road<<endl;
         cout<<"2. Rest"<<endl;
         cout<<"3. Shop"<<endl;
@@ -47,6 +112,7 @@ int casee=0;
         if(vertices[j].adj.size()==2&&vertices[j].adj[0].visited==true)
         {
         casee=2;
+        stats();
         cout<<"1. Travel to: "<<vertices[j].adj[1].v->name<<", "<< vertices[j].adj[1].v->state <<" via "<< vertices[j].adj[1].road<<endl;
         cout<<"2. Rest"<<endl;
         cout<<"3. Shop"<<endl;
@@ -56,13 +122,22 @@ int casee=0;
         {
             currentlocation=vertices[j].adj[0].v->name;
             vertices[j].adj[0].visited=true;
+            day++;
+        }
+        if(casee=1&&choice==3)
+        {
+            shop();
         }
         if(casee==2&&choice==1)
         {
             currentlocation=vertices[j].adj[1].v->name;
             vertices[j].adj[1].visited=true;
+            day++;
         }
-
+        if(casee==2&&choice==3)
+        {
+            shop();
+        }
         }
 
  }
@@ -80,14 +155,14 @@ cout << "=======================================================================
 cout <<                                                                                     endl;
 cout << "         =====  =            ===               =       =                     "<<endl;
 cout << "           =    =__          =  =  ====  =  =  =       =                      " << endl;
-cout << "           =    = =   ==     ===   =  =  =  =  =     ===  ==    ===          "    << endl;
-cout << "           =    = =   = ==   =  =  =  =  =  =  =     = =  = ==  =             " << endl;
-cout << "           =    = =    ==    ===   ====  ====  ====  ===   ==   =            " << endl;
+cout << "           =    = =   ==     ===   =  =  =  =  =     ===  ===  ===          "    << endl;
+cout << "           =    = =   = ==   =  =  =  =  =  =  =     = =  ==   =             " << endl;
+cout << "           =    = =    ==    ===   ====  ====  ====  ===  ===  =            " << endl;
 cout <<  endl;
-cout<<"         =====         =    =    =  =                                       "<<endl;
-cout<<"           =   ===       = =   ===  =    ===                             "<<endl;
-cout<<"           =   = =        =    = =  =    ==                         "<<endl;
-cout<<"           =   ===        =    ===  ===  ===                        "<<endl;
+cout<<"           =====         =    =    =  =                                       "<<endl;
+cout<<"             =   ===       = =   ===  =    ===                             "<<endl;
+cout<<"             =   = =        =    = =  =    ==                         "<<endl;
+cout<<"             =   ===        =    ===  ===  ===                        "<<endl;
 cout<<"                                                                "<<endl;
 cout << "        =====           =  =     " << endl;
 cout << "          =          =     =     " << endl;
@@ -116,9 +191,9 @@ cout<<endl;
 cout<<endl;
 cout<<"                               1. New Game"<<endl;
 cout<<"                               2. High-Scores"<<endl;
-cout<<"                               3. Options"<<endl;
-cout<<"                               4. View Credits"<<endl;
-cout<<"                               5. Exit"<<endl;
+cout<<"                               3. View Credits"<<endl;
+cout<<"                               4. Exit"<<endl;
+cout<<endl;
 cout<<endl;
 cout<<endl;
 cout<<endl;
@@ -132,8 +207,6 @@ cout<<"                               Your Choice:";
 
 int choice=0;
 cin>>choice;
-if(choice!=5)
-{
 
    if(choice==1)
    {
@@ -146,10 +219,6 @@ if(choice!=5)
     }
 
     if(choice==3)
-    {
-    cout<<"Options"<<endl;
-    }
-    if(choice==4)
     {
         string line;
         cout<<endl;
@@ -166,28 +235,40 @@ if(choice!=5)
     cout<<"__________________________Press Return To Continue__________________________"<<endl;
     cin.ignore();
     cin.get();
+    clearscreen();
     displaymainmenu();
+
 }
-if (choice==5)
+if(choice==4)
 {
-    cout<<"Goodbye!"<<endl;
-    exit(1);
+    cout<<"Goodbye!";
+    exit(0);
 }
-if (choice>5||choice<0)
+if (choice>4||choice<0)
 {
     cout<<"Choice not Avaliable"<<endl;
+    cout<<"Press Enter to Continue"<<endl;
+    cin.ignore();
+    cin.get();
+    clearscreen();
     displaymainmenu();
 }
-}
+
 }
 
 void character::introscene()
 {
 cout<<"Background: It is the end of the Spring Semester and you have just graduated"<<endl;
 cout<<"from CU, You miraculously still have $50,000 saved up that you want to spend on"<<endl;
-cout<<"getting a graduate degree from Yale. You have 48 hours to travel from Boulder";
+cout<<"getting a graduate degree from Yale. The faster you make it"<<endl;
 cout<<"to New Haven, Conneticut without running out of money,"<<endl;
-cout<<"becoming stranded, or even dying. Good Luck!"<<endl;
+cout<<"becoming stranded, or even dying the better your score."<<endl;
+cout<<"You car has a 30 gallon tank and a constant 30mpg giving you a range of 900mi"<<endl;
+cout<<"Each day you will use 3 rations of food"<<endl;
+cout<<"If you run out of gas you will lose 1 day and $100"<<endl;
+cout<<"If you run out of food you will lose 15hp for each meal missed"<<endl;
+cout<<"If you run out of health you die!"<<endl;
+cout<<"Good Luck!"<<endl;
 cout<<"Press Enter to Continue"<<endl;
 cin.ignore();
 cin.get();
@@ -197,10 +278,17 @@ void character::createcharacter()
 {
 bool loop = true;
 int majorchoice=0;
+string yourname="";
+
+    cout<<"Create Your Character!"<<endl;
+    cout<<"Your name?"<<endl;
+    cin>>yourname;
+    name=yourname;
+    cout<<"Hi "<< name<<endl;
 
     while(loop==true)
     {
-    cout<<"Create Your Character!"<<endl;
+
     cout<<"Majors:"<<endl;
     cout<<"1. Engineering"<<endl;
     cout<<"2. Medical"<<endl;
@@ -257,6 +345,7 @@ int majorchoice=0;
         cout<<"Invalid Input"<<endl;
         }
     }
+    clearscreen();
 }
 
 character::character()
@@ -298,10 +387,6 @@ void character:: addEdge(string v1, string v2, int weight, string road){
             }
         }
     }
-}
-void character::addyork()
-{
-
 }
 void character::addVertex(string n,string s){
     bool found = false;
