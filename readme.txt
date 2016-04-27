@@ -22,8 +22,8 @@ thats about it, no specific system requirements!
 
 No additional contributors
 
-open issues: Sometimes the menu generates big chunks of white space when you try to input
-the wrong input randomly and repeatedly.
+open issues: Sometimes the menu generates big chunks of white space when you buy gas or mess around with different inputs. Also 
+some inputs do not account for characters entered and characters entered will crash the program.
 
 
 
