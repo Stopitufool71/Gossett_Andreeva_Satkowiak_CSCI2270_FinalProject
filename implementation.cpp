@@ -359,7 +359,7 @@ if(choice==4)
 }
 if (choice>4||choice<0)
 {
-    cout<<"Choice not Avaliable"<<endl;
+    cout<<"Choice not Available"<<endl;
     cout<<"Press Enter to Continue"<<endl;
     cin.ignore();
     cin.get();
@@ -375,7 +375,7 @@ void character::introscene()
 cout<<"Background: It is the end of the Spring Semester and you have just graduated"<<endl;
 cout<<"from CU, You miraculously still have $50,000 saved up that you want to spend on"<<endl;
 cout<<"getting a graduate degree from Yale. The faster you make it"<<endl;
-cout<<"to New Haven, Conneticut without running out of money,"<<endl;
+cout<<"to New Haven, Connecticut without running out of money,"<<endl;
 cout<<"becoming stranded, or even dying the better your score."<<endl;
 cout<<"You car has a 30 gallon tank and a constant 30mpg giving you a range of 900mi"<<endl;
 cout<<"Each day you will use 3 rations of food"<<endl;
@@ -413,7 +413,7 @@ char yourname[256]="";
     if(majorchoice==1)
     {
     loop=false;
-    cout<<"Your an Engineer!"<<endl;
+    cout<<"You're an Engineer!"<<endl;
     cout<<"Health: 100"<<endl;
     cout<<"Stamina: 7"<<endl;
     cout<<"Luck: 3"<<endl;
@@ -424,7 +424,7 @@ char yourname[256]="";
         if(majorchoice==2)
     {
     loop=false;
-    cout<<"Your an Med Student!"<<endl;
+    cout<<"You're an Med Student!"<<endl;
     cout<<"Health: 120"<<endl;
     cout<<"Stamina: 5"<<endl;
     cout<<"Luck: 5"<<endl;
@@ -435,7 +435,7 @@ char yourname[256]="";
         if(majorchoice==3)
     {
     loop=false;
-    cout<<"Your an Business man!"<<endl;
+    cout<<"You're an Business man!"<<endl;
     cout<<"Health: 100"<<endl;
     cout<<"Stamina: 3"<<endl;
     cout<<"Luck: 9"<<endl;
