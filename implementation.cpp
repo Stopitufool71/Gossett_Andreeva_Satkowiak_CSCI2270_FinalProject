@@ -20,86 +20,49 @@ cout<< "Money: " << money << " dollars" <<endl;
 }
  void character::playgame()
  {
-     int i=0;
-     int j=0;
-     for(i=0;i<vertices.size();i++)
-     {
-         cout<<i<<vertices[i].name<<endl;
-     }
-     cout<< vertices[20].adj[0].v->name;
+    stats();
+int i=0;
+int j=0;
+int choice=0;
+int casee=0;
 
-     while(currentlocation!="NewHaven")
-     {
-    int choice=0;
-    int ca=0;
-    i=0;
-    for(i=0;i<vertices.size();i++)
+        while(currentlocation!="New Haven")
+        {
+        for(i=0;i<vertices.size();i++)
     {
         if(vertices[i].name==currentlocation)
-            break;
+        {
+            j=i;
+        }
     }
-    if(vertices[i].adj.size()==1&&vertices[i].adj[0].visited==false) //case 1
-    {
-        stats();
-        cout<<"case 1"<<endl;
-        cout<<"i"<<i<<endl;
-        ca=1;
-        cout<<"1. Travel to: "<<vertices[i].adj[0].v->name<<", "<< vertices[i].adj[0].v->state <<" via "<< vertices[i].adj[0].road<<endl;
+        if(vertices[j].adj.size()==1&&vertices[j].adj[0].visited==false)
+        {
+        casee=1;
+        cout<<"1. Travel to: "<<vertices[j].adj[0].v->name<<", "<< vertices[j].adj[0].v->state <<" via "<< vertices[j].adj[0].road<<endl;
         cout<<"2. Rest"<<endl;
         cout<<"3. Shop"<<endl;
-    }
+        }
 
-    if(vertices[i].adj.size()==3&&vertices[i].adj[0].visited==true) //case 2
-    {
-        stats();
-        cout<<"case 2"<<endl;
-        cout<<"i "<< i<<endl;
-        ca=2;
-        cout<<"1. Travel to: "<<vertices[i].adj[1].v->name<<", "<< vertices[i].adj[1].v->state <<" via "<< vertices[i].adj[1].road<<endl;
-        cout<<"2. Travel to: "<<vertices[i].adj[2].v->name<<", "<< vertices[i].adj[2].v->state <<" via "<< vertices[i].adj[2].road<<endl;
-        cout<<"3. Rest"<<endl;
-        cout<<"4. Shop"<<endl;
-    }
-
-    if(vertices[i].adj.size()==2&&vertices[i].adj[0].visited==true) //case 3
-    {
-        stats();
-        cout<<"Case3"<<endl;
-        cout<<"I "<< i<<endl;
-        ca=3;
-        cout<<"1. Travel to: "<<vertices[i].adj[1].v->name<<", "<< vertices[i].adj[1].v->state <<" via "<< vertices[i].adj[1].road<<endl;
+        if(vertices[j].adj.size()==2&&vertices[j].adj[0].visited==true)
+        {
+        casee=2;
+        cout<<"1. Travel to: "<<vertices[j].adj[1].v->name<<", "<< vertices[j].adj[1].v->state <<" via "<< vertices[j].adj[1].road<<endl;
         cout<<"2. Rest"<<endl;
         cout<<"3. Shop"<<endl;
-    }
+        }
+        cin>>choice;
+        if(casee==1&&choice==1)
+        {
+            currentlocation=vertices[j].adj[0].v->name;
+            vertices[j].adj[0].visited=true;
+        }
+        if(casee==2&&choice==1)
+        {
+            currentlocation=vertices[j].adj[1].v->name;
+            vertices[j].adj[1].visited=true;
+        }
 
-    cin>>choice;
-
-    if(ca==1&&choice==1)
-    {
-        currentlocation=vertices[i].adj[0].v->name;
-        vertices[i].adj[0].visited=true;
-    }
-
-    if(ca==2&&choice==1)
-    {
-        currentlocation=vertices[i].adj[1].v->name;
-        vertices[i].adj[1].visited=true;
-    }
-
-    if(ca==2&&choice==2)
-    {
-        currentlocation=vertices[i].adj[2].v->name;
-        vertices[i].adj[2].visited=true;
-    }
-
-    if(ca==3&&choice==1)
-    {
-        currentlocation=vertices[i].adj[1].v->name;
-        vertices[i].adj[1].visited=true;
-    }
-
-
-     }
+        }
 
  }
 
