@@ -1,0 +1,20 @@
+Boulder,Colorado
+Denver,Colorado
+Lochbuie,Colorado
+Fort Morgan,Colorado
+Sterling,Colorado
+Ogallala,Nebraska
+Lexington,Nebraska
+Lincoln,Nebraska
+Omaha,Nebraska
+Des Moines,Iowa
+Iowa City,Iowa
+Davenport,Iowa
+Joliet,Illinois
+South Bend,Illinois
+Toledo,Ohio
+Cleveland,Ohio
+Pittsburg,Pennsylvania
+Harrisburg,Pennsylvania
+New York,New York
+New Haven,Connecticut
