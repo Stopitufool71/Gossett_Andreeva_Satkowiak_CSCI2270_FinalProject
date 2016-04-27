@@ -42,7 +42,7 @@ player.addEdge("Omaha","Des Moines", 138,"Interstate 80");
 player.addEdge("Des Moines","Iowa City", 114,"Interstate 80");
 player.addEdge("Iowa City","Davenport", 59,"Interstate 80");
 player.addEdge("Davenport","Joliet", 145,"Interstate 80");
-player.addEdge("Joliet","Southbend",101,"Interstate 90");
+player.addEdge("Joliet","South Bend",101,"Interstate 90");
 player.addEdge("South Bend","Toledo", 157,"Interstate 80");
 player.addEdge("Toledo","Cleveland", 118,"Interstate 90");
 player.addEdge("Cleveland","Pittsburg", 134,"Interstate 76-E");
