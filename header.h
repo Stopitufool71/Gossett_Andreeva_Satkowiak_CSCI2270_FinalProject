@@ -17,6 +17,7 @@ string type="";
 character();
 setcharacter(int hp, int st, int lu ,int inte, int str, int mon);
 void stats();
+void addyork();
 void displaymainmenu();
 void introscene();
 void createcharacter();

@@ -33,6 +33,7 @@ int casee=0;
         if(vertices[i].name==currentlocation)
         {
             j=i;
+            cout<<"J/I"<<i<<endl;
         }
     }
         if(vertices[j].adj.size()==1&&vertices[j].adj[0].visited==false)
@@ -297,6 +298,10 @@ void character:: addEdge(string v1, string v2, int weight, string road){
             }
         }
     }
+}
+void character::addyork()
+{
+
 }
 void character::addVertex(string n,string s){
     bool found = false;

@@ -26,7 +26,7 @@ player.addVertex("Cleveland", "Ohio");
 player.addVertex("Pittsburg", "Pennsylvania");
 player.addVertex("Harrisburg", "Pennsylvania");
 player.addVertex("New York", "New York");
-player.addVertex("Newhaven", "Conneticut");
+player.addVertex("New Haven", "Conneticut");
 
 
 
