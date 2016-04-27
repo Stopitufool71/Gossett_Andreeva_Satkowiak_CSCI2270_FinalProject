@@ -11,7 +11,7 @@
 
 
 
-#include"header.h"
+#include"implementation.h"
 using namespace std;
 
 
@@ -44,8 +44,7 @@ else
 void character::showhighscore()
 {
     string line;
-    string word;
-    string thename;
+    int i=1;
     int thescore;
     int count=0;
     ifstream instream;
@@ -55,27 +54,20 @@ void character::showhighscore()
         cout<<"Error opening file" << endl;
         exit(1);
     }
-    while(getline(instream,line))
-    {
-    stringstream iss(line);
-    count=0;
-    while(getline(iss, word, ',' ))
-            if(count==0)
-            {
-                thename=word;
-            }
-            else if(count==1)
-            {
-                thescore=(atoi(word.c_str()));
-            }
-            cout<<thename<<" "<<thescore<<endl;
-            count++;
-    }
+    cout<<"Highscores"<<endl;
+    while(!instream.eof())
+{
+    getline(instream,line);
+    cout<<i<<" "<<line<<endl;
+    i++;
+}
+cout<<endl;
     cout<<"Press Enter to Continue"<<endl;
     cin.ignore();
     cin.get();
-    clearscreen();
+
     displaymainmenu();
+    instream.close();
 
 }
 void character::shop()

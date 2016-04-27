@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1461740821 source:c:\users\dude\documents\final project\implementation.cpp
-	"header.h"
+1461775401 source:c:\users\dude\documents\c++\new folder\final project\implementation.cpp
+	"implementation.h"
 
-1461739432 c:\users\dude\documents\final project\header.h
+1461741235 c:\users\dude\documents\c++\new folder\final project\implementation.h
 	<iostream>
 	<cstdlib>
 	<string>
@@ -10,6 +10,6 @@
 	<fstream>
 	<sstream>
 
-1461739270 source:c:\users\dude\documents\final project\main.cpp
-	"header.h"
+1461775424 source:c:\users\dude\documents\c++\new folder\final project\main.cpp
+	"implementation.h"
 
