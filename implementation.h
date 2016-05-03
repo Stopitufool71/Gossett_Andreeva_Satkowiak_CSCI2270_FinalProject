@@ -61,8 +61,8 @@ struct vertex{
 
         void addEdge(std::string v1, std::string v2, int weight, string road);
         void addVertex(string name, std::string state);
-        void loadEdgeFile(string fname);
-        void loadVertexFile(string fname);
+        void loadEdgeFile(char const * fname);
+        void loadVertexFile(char const * fname);
         void displayEdges();
         void playgame();
         vector<vertex> vertices;

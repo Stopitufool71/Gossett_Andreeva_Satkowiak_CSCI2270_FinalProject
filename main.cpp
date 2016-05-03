@@ -6,7 +6,14 @@
 //Final Project
 //4/27/2016
 
+#include <cstdlib>
+#include <vector>
+#include <string>
+#include<iostream>
+#include<fstream>
 #include"implementation.h"
+
+using namespace std;
 
 int main()
 {
@@ -14,17 +21,16 @@ int main()
 
     player.loadVertexFile("cities.txt");
     player.loadEdgeFile("roads.txt");
-
     player.displaymainmenu();
 
-    if(player.startgame=true)
+    if(player.startgame == true)
     {
-        player.introscene();
-        player.createcharacter();
+         player.introscene();
+         player.createcharacter();
 
-        if(player.type=="Engineer")
+        if(player.type == "Engineer")
         {
-        player.setcharacter(100,7,3,10,2,50000);
+            player.setcharacter(100,7,3,10,2,50000);
         }
         else if(player.type=="Med")
         {
