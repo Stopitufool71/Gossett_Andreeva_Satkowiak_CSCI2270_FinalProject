@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1461775401 source:c:\users\dude\documents\c++\new folder\final project\implementation.cpp
-	"implementation.h"
+1461784476 source:c:\users\dude\documents\final project\implementation.cpp
+	"header.h"
 
-1461741235 c:\users\dude\documents\c++\new folder\final project\implementation.h
+1461741235 c:\users\dude\documents\final project\header.h
 	<iostream>
 	<cstdlib>
 	<string>
@@ -10,34 +10,6 @@
 	<fstream>
 	<sstream>
 
-1461775424 source:c:\users\dude\documents\c++\new folder\final project\main.cpp
-	"implementation.h"
-
-1461790678 source:c:\users\dude\downloads\gossett_andreeva_satkowiak_csci2270_finalproject-master(2)\gossett_andreeva_satkowiak_csci2270_finalproject-master\implementation.cpp
-	"implementation.h"
-
-1461790678 c:\users\dude\downloads\gossett_andreeva_satkowiak_csci2270_finalproject-master(2)\gossett_andreeva_satkowiak_csci2270_finalproject-master\implementation.h
-	<iostream>
-	<cstdlib>
-	<string>
-	<vector>
-	<fstream>
-	<sstream>
-
-1461790678 source:c:\users\dude\downloads\gossett_andreeva_satkowiak_csci2270_finalproject-master(2)\gossett_andreeva_satkowiak_csci2270_finalproject-master\main.cpp
-	"implementation.h"
-
-1461800427 source:c:\users\connor\dropbox\schoolwork\csci 2270 assignments\testrepository\gossett_andreeva_satkowiak_csci2270_finalproject\implementation.cpp
-	"implementation.h"
-
-1461798972 c:\users\connor\dropbox\schoolwork\csci 2270 assignments\testrepository\gossett_andreeva_satkowiak_csci2270_finalproject\implementation.h
-	<iostream>
-	<cstdlib>
-	<string>
-	<vector>
-	<fstream>
-	<sstream>
-
-1461800016 source:c:\users\connor\dropbox\schoolwork\csci 2270 assignments\testrepository\gossett_andreeva_satkowiak_csci2270_finalproject\main.cpp
-	"implementation.h"
+1461773956 source:c:\users\dude\documents\final project\main.cpp
+	"header.h"
 
