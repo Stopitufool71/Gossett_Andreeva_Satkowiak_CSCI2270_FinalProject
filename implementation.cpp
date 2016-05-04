@@ -5,15 +5,14 @@
 //CSCI-2270 Rhonda Hoenigman
 //Final Project
 //4/27/2016
-
-
-
-
-
-
+#include <cstdlib>
+#include <vector>
+#include <string>
+#include<iostream>
 #include"implementation.h"
-using namespace std;
+#include<fstream>
 
+using namespace std;
 
 void character::rest()
 {
@@ -63,7 +62,7 @@ void character::showhighscore()
 }
 cout<<endl;
     cout<<"Press Enter to Continue"<<endl;
-    cin.ignore();
+    //cin.ignore();
     cin.get();
 
     displaymainmenu();
@@ -254,151 +253,144 @@ int casee=0;
 
  }
 
-
 void character::clearscreen()
 {
-cout<< string(50, '\n');
+    cout<< string(50, '\n');
 }
-
 
 void character::displaymainmenu()
 {
-cout << "================================================================================"<<endl;
-cout <<                                                                                     endl;
-cout << "         =====  =            ===               =       =                     "<<endl;
-cout << "           =    =            =  =  ====  =  =  =       =                      " << endl;
-cout << "           =    = =   ===    ===   =  =  =  =  =     ===  ===  ===          "    << endl;
-cout << "           =    = =   ==     =  =  =  =  =  =  =     = =  ==   =             " << endl;
-cout << "           =    = =   ===    ===   ====  ====  ====  ===  ===  =            " << endl;
-cout <<  endl;
-cout<<"         =====         =    =       =                                       "<<endl;
-cout<<"           =   ===       = =   ===  =    ===                             "<<endl;
-cout<<"           =   = =        =    ===  =    ==                         "<<endl;
-cout<<"           =   ===        =    = =  ===  ===                        "<<endl;
-cout<<"                                                                "<<endl;
-cout << "         =====           =  =             " << endl;
-cout << "           =                =      " << endl;
-cout << "           =   ===  ===  =  =              By:" << endl;
-cout << "           =   =    ===  =  =              Adam Gossett" << endl;
-cout << "           =   =    = =  =  ====           Austin Satkowiak" << endl;
-cout <<"                                           Natalia Andreeva  "<<endl;
-cout << "================================================================================"<<endl;
-cout<<"                            Press Enter To Continue                          ";
-cin.get();
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<"--------------------------------MAIN MENU---------------------------------------"<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<"                               1. New Game"<<endl;
-cout<<"                               2. High-Scores"<<endl;
-cout<<"                               3. View Credits"<<endl;
-cout<<"                               4. Exit"<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<endl;
-cout<<"                               Your Choice:";
 
-int choice=0;
-cin>>choice;
-
-   if(choice==1)
-   {
-    startgame=true;
-   }
-
-    if(choice==2)
-    {
-    showhighscore();
-    }
-
-    if(choice==3)
-    {
-        string line;
-        cout<<endl;
-    cout<<"_________________________________CREATED BY_________________________________"<<endl;
-    cout<<"_______________________________NAA-way Studios______________________________"<<endl;
-    cout<< "________________________________Adam Gossett_______________________________" <<endl;
-    cout<<"______________________________Austin Satkowiak______________________________"<<endl;
-    cout<<"______________________________Natalia Andreeva______________________________"<<endl;
-    cout<<"____________________________________________________________________________"<<endl;
-    cout<<"______________________________Rhonda Hoenigman______________________________"<<endl;
-    cout<<"_________________________________CSCI-2270__________________________________"<<endl;
-    cout<<"_________________________________4/27/2016__________________________________"<<endl;
+    cout << "================================================================================"<<endl;
+    cout <<                                                                                     endl;
+    cout << "         =====  =            ===               =       =                     "<<endl;
+    cout << "           =    =            =  =  ====  =  =  =       =                      " << endl;
+    cout << "           =    = =   ===    ===   =  =  =  =  =     ===  ===  ===          "    << endl;
+    cout << "           =    = =   ==     =  =  =  =  =  =  =     = =  ==   =             " << endl;
+    cout << "           =    = =   ===    ===   ====  ====  ====  ===  ===  =            " << endl;
+    cout <<  endl;
+    cout<<"         =====         =    =       =                                       "<<endl;
+    cout<<"           =   ===       = =   ===  =    ===                             "<<endl;
+    cout<<"           =   = =        =    ===  =    ==                         "<<endl;
+    cout<<"           =   ===        =    = =  ===  ===                        "<<endl;
+    cout<<"                                                                "<<endl;
+    cout << "         =====           =  =             " << endl;
+    cout << "           =                =      " << endl;
+    cout << "           =   ===  ===  =  =              By:" << endl;
+    cout << "           =   =    ===  =  =              Adam Gossett" << endl;
+    cout << "           =   =    = =  =  ====           Austin Satkowiak" << endl;
+    cout <<"                                           Natalia Andreeva  "<<endl;
+    cout << "================================================================================"<<endl;
+    cout<<"                            Press Enter To Continue                          ";
+    cin.get();
     cout<<endl;
-    cout<<"__________________________Press Return To Continue__________________________"<<endl;
-    cin.ignore();
-    cin.get();
-    clearscreen();
-    displaymainmenu();
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<"--------------------------------MAIN MENU---------------------------------------"<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<"                               1. New Game"<<endl;
+    cout<<"                               2. High-Scores"<<endl;
+    cout<<"                               3. View Credits"<<endl;
+    cout<<"                               4. Exit"<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<"                               Your Choice:";
 
-}
-if(choice==4)
-{
-    cout<<"Goodbye!";
-    exit(0);
-}
-if (choice>4||choice<0)
-{
-    cout<<"Choice not Available"<<endl;
-    cout<<"Press Enter to Continue"<<endl;
-    cin.ignore();
-    cin.get();
-    clearscreen();
-    displaymainmenu();
-}
 
+    string choice;
+    getline(cin,choice);
 
+           if(choice == "1")
+           {
+                startgame = true;
+           }
+           else if(choice == "2")
+           {
+                showhighscore();
+           }
+           else if(choice == "3")
+           {
+                string line;
+                cout<<endl;
+                cout<<"_________________________________CREATED BY_________________________________"<<endl;
+                cout<<"_______________________________NAA-way Studios______________________________"<<endl;
+                cout<< "________________________________Adam Gossett_______________________________" <<endl;
+                cout<<"______________________________Austin Satkowiak______________________________"<<endl;
+                cout<<"______________________________Natalia Andreeva______________________________"<<endl;
+                cout<<"____________________________________________________________________________"<<endl;
+                cout<<"______________________________Rhonda Hoenigman______________________________"<<endl;
+                cout<<"_________________________________CSCI-2270__________________________________"<<endl;
+                cout<<"_________________________________4/27/2016__________________________________"<<endl;
+                cout<<endl;
+                cout<<"__________________________Press Return To Continue__________________________"<<endl;
+               // cin.ignore();
+               ///I was thinking that it would be nice to start the game after pressing "Return/Enter" just once
+                cin.get();
+                clearscreen();
+                displaymainmenu();
+            }
+            else if(choice == "4")
+            {
+                cout<<"Goodbye"<<endl;
+                exit(0);
+            }
+            else
+            {
+               cout<<"            ****** This is not an option, please start over ******"<<endl;
+               displaymainmenu();
+            }
 }
 
 void character::introscene()
 {
-cout<<"Background: It is the end of the Spring Semester and you have just graduated"<<endl;
-cout<<"from CU, You miraculously still have $50,000 saved up that you want to spend on"<<endl;
-cout<<"getting a graduate degree from Yale. The faster you make it"<<endl;
-cout<<"to New Haven, Connecticut without running out of money,"<<endl;
-cout<<"becoming stranded, or even dying the better your score."<<endl;
-cout<<"You car has a 30 gallon tank and a constant 30mpg giving you a range of 900mi"<<endl;
-cout<<"Each day you will use 3 rations of food"<<endl;
-cout<<"If you run out of gas you will lose 1 day and $100"<<endl;
-cout<<"If you run out of food you will lose 15hp for each meal missed"<<endl;
-cout<<"If you run out of health you die!"<<endl;
-cout<<"Good Luck!"<<endl;
-cout<<"Press Enter to Continue"<<endl;
-cin.ignore();
-cin.get();
-clearscreen();
+    cout<<"Background: It is the end of the Spring Semester and you have just graduated"<<endl;
+    cout<<"from CU, You miraculously still have $50,000 saved up that you want to spend on"<<endl;
+    cout<<"getting a graduate degree from Yale. The faster you make it"<<endl;
+    cout<<"to New Haven, Connecticut without running out of money,"<<endl;
+    cout<<"becoming stranded, or even dying the better your score."<<endl;
+    cout<<"You car has a 30 gallon tank and a constant 30mpg giving you a range of 900mi"<<endl;
+    cout<<"Each day you will use 3 rations of food"<<endl;
+    cout<<"If you run out of gas you will lose 1 day and $100"<<endl;
+    cout<<"If you run out of food you will lose 15hp for each meal missed"<<endl;
+    cout<<"If you run out of health you die!"<<endl;
+    cout<<"Good Luck!"<<endl;
+    cout<<"Press Enter to Continue"<<endl;
+   //  cin.ignore();
+    cin.get();
+    clearscreen();
 }
 
 void character::createcharacter()
 {
 bool loop = true;
-int majorchoice=0;
+//int majorchoice=0;
+string majorchoice; /// I changed majorchoice to a string to take into account any characters that were keyed in that were not part of your menu, this stops the infinite loop
 char yourname[256]="";
 
     cout<<"Create Your Character!"<<endl;
     cout<<"Your name?"<<endl;
     cin.getline(yourname,256);
-    name=yourname;
+    name = yourname;
     cout<<"Hi "<< name<<endl<<endl;
 
     while(loop==true)
@@ -409,8 +401,8 @@ char yourname[256]="";
     cout<<"2. Medical"<<endl;
     cout<<"3. Business"<<endl;
     cout<<"4. What do these choices mean?" <<endl;
-    cin>>majorchoice;
-    if(majorchoice==1)
+    getline(cin,majorchoice);
+    if(majorchoice=="1")
     {
     loop=false;
     cout<<"You're an Engineer!"<<endl;
@@ -421,7 +413,7 @@ char yourname[256]="";
     cout<<"Strength: 2"<<endl;
     type="Engineer";
     }
-        if(majorchoice==2)
+    else if(majorchoice=="2")
     {
     loop=false;
     cout<<"You're an Med Student!"<<endl;
@@ -432,7 +424,7 @@ char yourname[256]="";
     cout<<"Strength: 5"<<endl;
     type="Med";
     }
-        if(majorchoice==3)
+    else if(majorchoice=="3")
     {
     loop=false;
     cout<<"You're an Business man!"<<endl;
@@ -443,31 +435,26 @@ char yourname[256]="";
     cout<<"Strength: 8"<<endl;
     type="Business";
     }
-        if(majorchoice==4)
+    else if(majorchoice=="4")
     {
     loop=true;
     clearscreen();
     cout<<"Engineering: You start with very high intelligence, high stamina, low strength, and medium luck. You also have perks to fix things."<<endl;
     cout<<"Medical: You start with extra health, high intelligence, medium stamina,\nmedium strength, and medium luck. You also have perks to heal yourself and others."<<endl;
     cout<<"Business: You start with medium intelligence, low stamina, high strength \nand high luck. You have perks to make money on the road."<<endl;
-
-
     }
-        if(majorchoice>4 || majorchoice<0)
-        {
-        loop=true;
+    ///I added this else statement to deal with any input that is not part of the 4 options that you give them, this stops the infinite loop when user inputs a wrong character
+     else
+    {
+        loop = true;
         cout<<"Invalid Input"<<endl;
-        }
     }
+
+}
     cout<<"Press Enter to Continue"<<endl;
     cin.ignore();
     cin.get();
     clearscreen();
-}
-
-character::character()
-{
-
 }
 
 void character::setcharacter(int hp, int st, int lu, int inte, int str, int mon)
@@ -506,6 +493,7 @@ void character:: addEdge(string v1, string v2, int weight, string road){
         }
     }
 }
+
 void character::addVertex(string n,string s){
     bool found = false;
     for(int i = 0; i < vertices.size(); i++){
@@ -523,6 +511,10 @@ void character::addVertex(string n,string s){
     }
 }
 
+character::character(){
+
+}
+
 void character::displayEdges(){
     //loop through all vertices and adjacent vertices
     for(int i = 0; i < vertices.size(); i++){
@@ -535,9 +527,9 @@ void character::displayEdges(){
 
 }
 
-void character::loadVertexFile(string fname)
+void character::loadVertexFile(char const * fname)
 {
-    fstream infile;
+    ifstream infile;
     infile.open(fname);
     if (!infile.good())
     {
@@ -555,7 +547,7 @@ void character::loadVertexFile(string fname)
     infile.close();
 }
 
-void character::loadEdgeFile(string fname)
+void character::loadEdgeFile(char const * fname)
 {
     fstream infile;
     infile.open(fname);
